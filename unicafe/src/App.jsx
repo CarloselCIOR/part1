@@ -13,20 +13,24 @@ const Statistics = (props) => {
     )
   }
   return (
-    <div>
+    <table>
+      <thead></thead>
+      <tbody>
       <StaticLine text='good' value={props.good} />
       <StaticLine text='neutral' value={props.neutral} />
       <StaticLine text='bad' value={props.bad} />
       <StaticLine text='all' value={total} />
       <StaticLine text='average' value={average} />
       <StaticLine text='positive' value={positive + ' %'} />
-    </div>
+      </tbody>
+      <tfoot></tfoot>
+    </table>
   )
 }
 
 const Header = ({ text }) => <h1>{text}</h1>
 
-const StaticLine = ({ text, value }) => <p>{text} {value}</p>
+const StaticLine = ({ text, value }) => <tr><td>{text}</td><td>{value}</td></tr>
 
 const Button = ({ handleClick, text }) => <button onClick={handleClick}>{text}</button>
 
